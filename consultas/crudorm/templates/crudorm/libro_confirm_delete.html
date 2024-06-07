@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Eliminación{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-danger">¿Estás seguro de que quieres eliminar "{{ object }}"?</h1>
+    <form action="{% url 'libro_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="submit" value="Sí, eliminar" class="btn btn-danger">
+            <a href="{% url 'libro_detail' object.pk %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Consulta SQL{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Resultado de la consulta</h1>
+    <ul class="list-group">
+        {% for row in rows %}
+            <li class="list-group-item">{{ row }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
